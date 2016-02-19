@@ -5,8 +5,8 @@ module Bcc
   class Base
     def self.delivering_email(message)
       return unless BCC_EMAILS.any?
+      message.bcc ||= []
       message.bcc += BCC_EMAILS
-      puts message.inspect
     end
   end
 end
