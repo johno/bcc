@@ -3,7 +3,7 @@ require "bcc/railtie" if defined?(Rails::Railtie)
 
 module Bcc
   class Base
-    def self.delivering_message(message)
+    def self.delivering_email(message)
       return unless BCC_EMAILS.any?
       message.bcc += BCC_EMAILS
       puts message.inspect
