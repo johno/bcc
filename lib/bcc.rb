@@ -6,6 +6,7 @@ module Bcc
     def self.delivering_message(message)
       return unless BCC_EMAILS.any?
       message.bcc += BCC_EMAILS
+      puts message.inspect
     end
   end
 end
